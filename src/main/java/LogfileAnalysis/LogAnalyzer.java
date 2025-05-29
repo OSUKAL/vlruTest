@@ -4,13 +4,12 @@ import Models.LogRecord;
 import Models.LogsAnalyzeResult;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Анализатор списка записей логов
  */
 public class LogAnalyzer {
-    private static final Short[] FAILURE_STATUSES = new Short[] {500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 520, 521, 522, 523, 524, 525, 526};
+    private static final short LAST_SUCCESS_STATUS = 499;
 
     /**
      * Анализ списка записей логов
@@ -23,7 +22,7 @@ public class LogAnalyzer {
         var issuesCount = 0;
 
         for (LogRecord record : records) {
-            if (Arrays.asList(FAILURE_STATUSES).contains(record.status()) || record.time() > maxTime)
+            if (record.status() > LAST_SUCCESS_STATUS || record.time() > maxTime)
                 issuesCount++;
         }
 
