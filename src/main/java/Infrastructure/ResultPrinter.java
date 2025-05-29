@@ -15,7 +15,7 @@ public class ResultPrinter {
      */
     public static void print(ArrayList<LogsAnalyzeResult> results) {
         for (var result : results) {
-            var issues = String.format("%02d", result.issueCount());
+            var issues = String.format("%03d", result.issueCount());
             var truncAccessibility = Math.floor(result.accessibility() * 10) / 10;
             System.out.println(issues + " " + result.interval() + " " + truncAccessibility);
         }
