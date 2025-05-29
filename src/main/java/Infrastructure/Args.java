@@ -9,7 +9,7 @@ public class Args {
     /** Вызов списка параметров командной строки с описанием*/
     @Parameter(
             names = "-help",
-            description = "To run app enter command java -jar <this_app_jar_file_path> -[l|logfile] <logfile_to_analyze_path> -[t|time] <time_in_milliseconds> -u <accessibility_percentage_up_to_100.0>"
+            description = "Для запуска приложения выполните команду java -jar <расположение_jar_файла> -[l|logfile] <расположение_анализируемого_лог_файла> -[t|time] <время_в_миллисекундах> -u <минимальный_уровень_доступности> порядок атрибутов не важен"
             ,
             help = true
     )
@@ -20,10 +20,10 @@ public class Args {
     public String logfile;
 
     /** Минимальный уровень доступности по интервалу записи логов */
-    @Parameter(names = "-u", description = "Min accessibility percentage. e.g. 99.9") //Почему -u
+    @Parameter(names = "-u", description = "Минимальный уровень доступности за интервал записи логов от 0.0-100.0") //Почему -u
     public Double minAccessibility;
 
     /** Максимальное время ответа в миллисекундах */
-    @Parameter(names = {"-time", "-t"}, description = "Max processing time in milliseconds in range. e.g. 45.0")
+    @Parameter(names = {"-time", "-t"}, description = "Максимальное время ответа в миллисекундах")
     public Integer maxProcessingTime;
 }
