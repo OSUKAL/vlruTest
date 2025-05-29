@@ -68,7 +68,7 @@ public class LogfileAnalyzeHandler {
             return results;
 
         } catch (IOException exception) {
-            return new ArrayList<>();
+            return null;
         }
     }
 }

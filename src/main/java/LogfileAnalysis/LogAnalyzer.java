@@ -27,7 +27,7 @@ public class LogAnalyzer {
         }
 
         var accessibility = (1 - ((double) issuesCount / records.size())) * 100;
-        if (accessibility > minAccessibility)
+        if (accessibility >= minAccessibility)
             return null;
 
         var interval = records.getFirst().interval();
