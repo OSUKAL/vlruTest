@@ -19,7 +19,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
  */
 class LogfileAnalyzeHandlerTest {
     /**
-     * Обработка лог файла с возвратом списка результатов анализа
+     * Проверка обработки лог файла с возвратом списка результатов анализа
      */
     @ParameterizedTest
     @MethodSource("logfilesProvider")

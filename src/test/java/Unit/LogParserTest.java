@@ -21,7 +21,7 @@ class LogParserTest {
      */
     @ParameterizedTest
     @MethodSource("logsProvider")
-    void validDataParse(String log, LogRecord expected) {
+    void parse_output(String log, LogRecord expected) {
         var parser = new LogParser();
         var actual = parser.parse(log);
 

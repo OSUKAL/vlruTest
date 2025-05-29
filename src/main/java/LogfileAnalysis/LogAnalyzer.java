@@ -6,7 +6,7 @@ import Models.LogsAnalyzeResult;
 import java.util.ArrayList;
 
 /**
- * Анализатор списка записей логов
+ * Анализатор списка данных логов
  */
 public class LogAnalyzer {
     private static final short LAST_SUCCESS_STATUS = 499;

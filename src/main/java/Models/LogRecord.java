@@ -1,7 +1,7 @@
 package Models;
 
 /**
- * Данные записи лога
+ * Данные лога
  *
  * @param interval Время записи лога
  * @param status   Код состояния
