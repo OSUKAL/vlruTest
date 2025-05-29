@@ -36,7 +36,7 @@ public class LogfileAnalyzeHandler {
             String line;
 
             var results = new ArrayList<LogsAnalyzeResult>();
-            var temp = new ArrayList<LogRecord>();
+            var intervalLogs = new ArrayList<LogRecord>();
             String interval = null;
 
             while ((line = reader.readLine()) != null) {
@@ -46,22 +46,22 @@ public class LogfileAnalyzeHandler {
 
                 if (interval == null) {
                     interval = record.interval();
-                    temp.add(record);
+                    intervalLogs.add(record);
                     continue;
                 }
 
                 if (record.interval().compareTo(interval) != 0) {
-                    var result = logAnalyzer.analyze(temp, maxTime, minAccessibility);
+                    var result = logAnalyzer.analyze(intervalLogs, maxTime, minAccessibility);
                     if (result != null)
                         results.add(result);
 
-                    temp.clear();
+                    intervalLogs.clear();
                     interval = record.interval();
                 }
 
-                temp.add(record);
+                intervalLogs.add(record);
             }
-            var result = logAnalyzer.analyze(temp, maxTime, minAccessibility);
+            var result = logAnalyzer.analyze(intervalLogs, maxTime, minAccessibility);
             if (result != null)
                 results.add(result);
 
