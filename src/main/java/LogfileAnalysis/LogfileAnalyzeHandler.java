@@ -17,7 +17,7 @@ public class LogfileAnalyzeHandler {
     private final LogParser parser;
 
     /**
-     * Обработчик анализа лог файлов по заданным параметрам
+     * Обработчик анализа лог файлов
      */
     public LogfileAnalyzeHandler() {
         this.logAnalyzer = new LogAnalyzer();
@@ -25,7 +25,7 @@ public class LogfileAnalyzeHandler {
     }
 
     /**
-     * Обработка анализа лог файла по заданным параметрам
+     * Обработка анализа лог файла
      *
      * @param logfile          Лог файл
      * @param maxTime          Максимальное время ответа
